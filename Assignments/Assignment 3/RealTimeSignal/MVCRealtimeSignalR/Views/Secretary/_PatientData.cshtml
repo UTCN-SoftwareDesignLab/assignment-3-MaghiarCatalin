@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MVCRealtimeSignalR.Models.Patient>
+
+
+<h2>Patients</h2>
+
+<p>
+    @Html.ActionLink("Create New Patient", "CreatePatient")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdentityNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonalNumericalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdentityNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalNumericalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditPatient", new { id = item.Id }) |
+            </td>
+        </tr>
+    }
+
+</table>
+
